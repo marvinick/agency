@@ -11,11 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150512230105) do
+ActiveRecord::Schema.define(version: 20150513013110) do
 
   create_table "candidates", force: true do |t|
     t.string "name"
     t.string "email"
+  end
+
+  create_table "skills", force: true do |t|
+    t.string "name"
   end
 
 end
