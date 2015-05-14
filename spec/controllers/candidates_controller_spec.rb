@@ -30,8 +30,7 @@ describe CandidatesController do
   describe "POST create" do
     it "creates @Candidate" do
       post :create, candidate: {name: "Marvin", email: "marvin@email.com"}
-      Candidate.first.name.should == "Marvin"
-      Candidate.first.email.should == "marvin@email.com"
+      candidate = Fabricate(:candidate)
     end
 
     it "redirects to root_path after create" do

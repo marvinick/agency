@@ -1,4 +1,4 @@
 class Skill < ActiveRecord::Base
-  belongs_to :candidate, foreign_key: :candidate_id
+  belongs_to :candidate
   validates :name, presence: true
 end
