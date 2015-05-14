@@ -10,6 +10,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
+gem 'fabrication'
+gem 'faker'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.1'

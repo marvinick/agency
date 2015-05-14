@@ -1,4 +1,6 @@
 class CandidatesController < ApplicationController
+  before_action :set_candidate, only: [:show]
+
   def index
     @candidates = Candidate.all
   end
@@ -13,7 +15,16 @@ class CandidatesController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+
+  end
+
   private
+
+  def set_candidate
+    @candidate = Candidate.find(params[:id])
+  end
+
   def candidate_params
     params.require(:candidate).permit(:name, :email)
   end

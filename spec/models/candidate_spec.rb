@@ -1,4 +1,5 @@
 require 'spec_helper'
 
 describe Candidate do
-  end
+  it { should have_many(:skills)}
+end

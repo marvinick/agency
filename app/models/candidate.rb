@@ -1,3 +1,3 @@
 class Candidate < ActiveRecord::Base
-  has_many :skills, foreign_key: :candidate_id
+  has_many :skills
 end
