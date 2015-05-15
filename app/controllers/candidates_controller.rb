@@ -10,7 +10,7 @@ class CandidatesController < ApplicationController
 
   def create
     @candidate = Candidate.new(candidate_params)
-    @candidate.save
+    @candidate.save!
     redirect_to root_path
   end
 

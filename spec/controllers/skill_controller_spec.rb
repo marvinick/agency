@@ -3,9 +3,9 @@ require "spec_helper"
 describe SkillsController do
   describe "GET index" do
     it "sets @skills" do
-      skill = Fabricate(:skill)
+      skill = Skill.create
       get :index
-      expect(assigns(:skills)).to eq([skill])
+      expect(assigns(:skills)).to eq([skills])
     end
 
     it "renders the index template" do
@@ -37,6 +37,14 @@ describe SkillsController do
     it "redirects to root_path after create" do
       post :create, skill: {name: "Skill" }
       response.should redirect_to root_path
+    end
+  end
+
+  describe "GET show" do
+    it "sets @skill" do
+      skill = Fabricate(:skill)
+      get :show, id: show.id
+      expect(assigns(:skill)).to eq(skill)
     end
   end
 end
