@@ -14,6 +14,10 @@ class SkillsController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+    @skill = Skill.find(params[:id])
+  end
+
   private
 
   def skill_params

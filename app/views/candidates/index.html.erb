@@ -1,5 +1,5 @@
 <h1>Enter infos</h1>
 <%= link_to "Add Candidate", new_candidate_path %>
 <% @candidates.each do |candidate| %>
-  <%= candidate.name %>
+  <%= link_to candidate.name, candidate %>
 <% end %>
