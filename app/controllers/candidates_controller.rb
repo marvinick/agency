@@ -1,5 +1,4 @@
 class CandidatesController < ApplicationController
-  before_action :set_candidate, only: [:show]
 
   def index
     @candidates = Candidate.all
@@ -16,14 +15,10 @@ class CandidatesController < ApplicationController
   end
 
   def show
-
+    @candidate = Candidate.find(params[:id])
   end
 
   private
-
-  def set_candidate
-    @candidate = Candidate.find(params[:id])
-  end
 
   def candidate_params
     params.require(:candidate).permit(:name, :email)

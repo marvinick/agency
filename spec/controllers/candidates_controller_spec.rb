@@ -3,7 +3,7 @@ require "spec_helper"
 describe CandidatesController do
   describe "GET index" do
     it "sets @candidates" do
-      candidate = Candidate.create
+      candidate = Fabricate(:candidate)
       get :index
       expect(assigns(:candidates)).to eq([candidate])
     end
@@ -24,13 +24,12 @@ describe CandidatesController do
     it "renders the new template" do
       get :new
       response.should render_template :new
-    end
   end
 
   describe "POST create" do
     it "creates @Candidate" do
       post :create, candidate: {name: "Marvin", email: "marvin@email.com"}
-      candidate = Fabricate(:candidate)
+      candidate = Fabricate.build(:candidate)
     end
 
     it "redirects to root_path after create" do
@@ -46,5 +45,4 @@ describe CandidatesController do
       expect(assigns(:candidate)).to eq(candidate)
     end
   end
-
 end

@@ -1,4 +1,5 @@
 class Skill < ActiveRecord::Base
-  belongs_to :candidate
+  has_many :candidate_skills
+  has_many :candidates, through: :candidate_skills
   validates :name, presence: true
 end
