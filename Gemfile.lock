@@ -154,6 +154,7 @@ DEPENDENCIES
   faker
   jbuilder (~> 2.0)
   jquery-rails
+  rack-test
   rails (= 4.1.0)
   rspec-rails (~> 3.0.1)
   sass-rails (~> 4.0.3)

@@ -28,4 +28,15 @@ describe SkillsController do
     end
   end
 
+  describe "POST create" do
+    it "creates @Skill" do
+      post :create, skill: {name: "rails"}
+      skill = Fabricate(:skill)
+    end
+
+    it "redirects to root_path after create" do
+      post :create, skill: {name: "Skill" }
+      response.should redirect_to root_path
+    end
+  end
 end
