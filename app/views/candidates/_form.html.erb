@@ -1,11 +1,15 @@
 <%= form_for @candidate do |form| %>
-<%= form.label :name %>
-<%= form.text_field :name %>
-<%= form.label :email %>
-<%= form.text_field :email %>
-<%= form.label "Skill" %>
-  <%= form.collection_check_boxes :skill_ids, Skill.all, :id, :name do |cb|%>
-    <% cb.label(class: "checkbox inline") {cb.check_box(class: "checkbox") + cb.text} %>
-  <% end %>
-<%= form.submit 'Submit' %>
+
+  <li><%= form.label :name %></li>
+  <%= form.text_field :name %>
+
+  <li><%= form.label :email %></li>
+  <%= form.text_field :email %>
+  <hr>
+  <%= form.label "Skills" %>
+
+    <%= form.collection_check_boxes :skill_ids, Skill.all, :id, :name do |cb|%>
+      <% cb.label(class: "checkbox inline") {cb.check_box(class: "checkbox") + cb.text} %>
+    <% end %>
+  <%= form.submit 'Submit', class: "btn btn-success" %>
 <% end %>

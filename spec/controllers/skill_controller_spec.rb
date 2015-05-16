@@ -5,7 +5,7 @@ describe SkillsController do
     it "sets @skills" do
       skill = Skill.create
       get :index
-      expect(assigns(:skills)).to eq([skills])
+      expect(assigns(:skills)).to eq([skill])
     end
 
     it "renders the index template" do

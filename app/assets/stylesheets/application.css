@@ -14,35 +14,56 @@
  *= require_self
  */
 
- .container {
-  margin-left: 200px;
+body {
+  padding-top :65px;
+  padding-left :35px;
+  padding-right :35px;
+}
+
+ #sticky {
+  margin: auto;
+  position: fixed;
+  z-index:1000;
+  top: 0px;
+  width: 100%;
+  height: 55px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  /* Adds to the bottom of the bar */
+  -webkit-box-shadow: 0px 0px 15px 0px #000000;
+  -moz-box-shadow: 0px 0px 15px 0px #000000;
+  box-shadow: 0px 0px 15px 0px #000000;
+  /* Adds the transparent background */
+  background-color: black;
+  opacity: 0.8;
+}
+
+#sticky li {
+  display: inline;
+  padding-right: 2px;
+}
+
+#sticky a {
+  font-size: 15px;
+  color: white;
+  font-family: Comic Sans MS, serif;
+  padding-left: 15px;
+  padding-right: 25px;
+}
+
+.container {
   position: relative;
 }
 
 .navbar .nav > li > a.brand {
   padding-left: 0px;
 }
-
 .quiet {
   color: #ababab;
 }
 
 div.nav_item {
-  margin-left: 25px;
+  margin-left: 15px;
   float: left;
-}
-
-.label  {
-  a, a:hover, a:focus {
-    color: #fff;
-    text-decoration: overline;
-  }
-}
-
-div.comment_votes {
-  padding: 10px;
-}
-
-body {
-
 }
