@@ -1,2 +1,6 @@
-
-  <h4><%= @skill.name %></h4>
+<h4>Available candidates for the skill:</h4>
+<div class="span4 well">
+  <% @skill.candidates.each do |candidate| %>
+    <h5><%= link_to candidate.name, candidate_path(candidate) %></h5>
+  <% end %>
+</div>

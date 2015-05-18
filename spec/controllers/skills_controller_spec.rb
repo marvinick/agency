@@ -3,7 +3,7 @@ require "spec_helper"
 describe SkillsController do
   describe "GET index" do
     it "sets @skills" do
-      skill = Skill.create
+      skill = Skill.create!(name: 'marvin')
       get :index
       expect(assigns(:skills)).to eq([skill])
     end
@@ -29,9 +29,8 @@ describe SkillsController do
 
   describe "POST create" do
     it "creates @Skill" do
-      skill = Fabricate.build(:skill)
       post :create, skill: {name: "rails"}
-
+      skill = Skill.create!(name: "marvin")
     end
 
     it "redirects to root_path after create" do
@@ -42,8 +41,8 @@ describe SkillsController do
 
   describe "GET show" do
     it "sets @skill" do
-      skill = Fabricate(:skill)
-      get :show, id: show.id
+      skill = Skill.create!(name: 'marvin')
+      get :show, id: skill
       expect(assigns(:skill)).to eq(skill)
     end
   end

@@ -3,7 +3,7 @@ require "spec_helper"
 describe CandidatesController do
   describe "GET index" do
     it "sets @candidates" do
-      candidate = Fabricate(:candidate)
+      candidate = Candidate.create!(name: 'Marvin', email: 'marv@marv.com')
       get :index
       expect(assigns(:candidates)).to eq([candidate])
     end
@@ -30,7 +30,7 @@ describe CandidatesController do
   describe "POST create" do
     it "creates @Candidate" do
       post :create, candidate: {name: "Marvin", email: "marvin@email.com"}
-      candidate = Fabricate.build(:candidate)
+      candidate = Candidate.create!(name: 'Marvin', email: 'marv@marv.com')
     end
 
     it "redirects to root_path after create" do
@@ -41,8 +41,8 @@ describe CandidatesController do
 
   describe "GET Show" do
     it "sets @candidate" do
-      candidate = Fabricate(:candidate)
-      get :show, id: candidate.id
+      candidate = Candidate.create!(name: 'Marvin', email: 'marv@marv.com')
+      get :show, id: candidate
       expect(assigns(:candidate)).to eq(candidate)
     end
   end

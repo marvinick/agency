@@ -10,8 +10,11 @@ class CandidatesController < ApplicationController
 
   def create
     @candidate = Candidate.new(candidate_params)
-    @candidate.save!
-    redirect_to root_path
+    if @candidate.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def show
